@@ -11,3 +11,10 @@ class Base(models.Model):
 
     class Meta:
         abstract = True
+
+
+class Player(Base):
+    name = models.CharField(max_length=10, db_index=True)
+
+    def __str__(self):
+        return self.name
